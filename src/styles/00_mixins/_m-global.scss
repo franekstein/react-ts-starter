@@ -1,0 +1,63 @@
+@mixin global-border-box($box: border-box) {
+  html {
+    box-sizing: $box;
+  }
+
+  *,
+  ::after,
+  ::before {
+    box-sizing: inherit;
+  }
+}
+
+@mixin global-block-images {
+  img {
+    @include image;
+  }
+}
+
+@mixin global-reset-layout {
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+@mixin global-reset-text {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-break: auto;
+  line-height: 1.5;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+
+@mixin global-hide-text {
+  /* stylelint-disable font-family-no-missing-generic-family-keyword */
+  font: '0/0' a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin global-hide-element {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

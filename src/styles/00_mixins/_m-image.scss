@@ -1,0 +1,12 @@
+@mixin image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@mixin image-fit($type: cover, $position: center center) {
+  @include image;
+
+  object-fit: $type;
+  object-position: $position;
+}

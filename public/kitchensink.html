@@ -1,0 +1,848 @@
+<!doctype html>
+<html class="no-js fonts__initial" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>HyperHTML Starter</title>
+  <meta name="description" content="Starter kit for HyperHTML, Webpack (with Hot Module Replacement), Typescript and Babel.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)"
+    href="/favicons/apple-touch-startup-image-320x460.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)"
+    href="/favicons/apple-touch-startup-image-640x920.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+    href="/favicons/apple-touch-startup-image-640x1096.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+    href="/favicons/apple-touch-startup-image-750x1294.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)"
+    href="/favicons/apple-touch-startup-image-1182x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)"
+    href="/favicons/apple-touch-startup-image-1242x2148.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)"
+    href="/favicons/apple-touch-startup-image-748x1024.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"
+    href="/favicons/apple-touch-startup-image-1496x2048.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)"
+    href="/favicons/apple-touch-startup-image-768x1004.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)"
+    href="/favicons/apple-touch-startup-image-1536x2008.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title">
+  <meta name="application-name">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="msapplication-TileImage" content="/favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="theme-color" content="#fff">
+
+  <link rel="preload" href="/fonts/montserrat-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/opensans-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('/fonts/montserrat-medium-webfont.woff2') format('woff2'), url('/fonts/montserrat-medium-webfont.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Open Sans';
+      src: url('/fonts/opensans-regular.woff2') format('woff2'), url('/fonts/opensans-regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    .fonts__initial *,
+    .fonts__initial *::before,
+    .fonts__initial *::after {
+      font-family: sans-serif !important;
+    }
+
+    .no-js__notify {
+      background: #f2f2f2;
+      color: #222222;
+      z-index: 99999;
+      position: absolute;
+      content: '';
+      display: flex;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      font-size: 21px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .no-js__notify a {
+      color: #2942c5;
+    }
+  </style>
+
+  <script>
+    (function () {
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      // document.querySelector('.no-js__notify').innerHTML = '';
+
+      // Optimization for Repeat Views
+      if (sessionStorage.fontsLoadedCriticalFoftPreloadPolyfill) {
+        document.documentElement.classList.remove('fonts__initial');
+        return;
+      }
+      /* Font Face Observer v2.0.13 - © Bram Stein. License: BSD-3-Clause */
+      (function () {
+        'use strict'; var f, g = []; function l(a) { g.push(a); 1 == g.length && f() } function m() { for (; g.length;)g[0](), g.shift() } f = function () { setTimeout(m) }; function n(a) { this.a = p; this.b = void 0; this.f = []; var b = this; try { a(function (a) { q(b, a) }, function (a) { r(b, a) }) } catch (c) { r(b, c) } } var p = 2; function t(a) { return new n(function (b, c) { c(a) }) } function u(a) { return new n(function (b) { b(a) }) } function q(a, b) { if (a.a == p) { if (b == a) throw new TypeError; var c = !1; try { var d = b && b.then; if (null != b && "object" == typeof b && "function" == typeof d) { d.call(b, function (b) { c || q(a, b); c = !0 }, function (b) { c || r(a, b); c = !0 }); return } } catch (e) { c || r(a, e); return } a.a = 0; a.b = b; v(a) } }
+        function r(a, b) { if (a.a == p) { if (b == a) throw new TypeError; a.a = 1; a.b = b; v(a) } } function v(a) { l(function () { if (a.a != p) for (; a.f.length;) { var b = a.f.shift(), c = b[0], d = b[1], e = b[2], b = b[3]; try { 0 == a.a ? "function" == typeof c ? e(c.call(void 0, a.b)) : e(a.b) : 1 == a.a && ("function" == typeof d ? e(d.call(void 0, a.b)) : b(a.b)) } catch (h) { b(h) } } }) } n.prototype.g = function (a) { return this.c(void 0, a) }; n.prototype.c = function (a, b) { var c = this; return new n(function (d, e) { c.f.push([a, b, d, e]); v(c) }) };
+        function w(a) { return new n(function (b, c) { function d(c) { return function (d) { h[c] = d; e += 1; e == a.length && b(h) } } var e = 0, h = []; 0 == a.length && b(h); for (var k = 0; k < a.length; k += 1)u(a[k]).c(d(k), c) }) } function x(a) { return new n(function (b, c) { for (var d = 0; d < a.length; d += 1)u(a[d]).c(b, c) }) }; window.Promise || (window.Promise = n, window.Promise.resolve = u, window.Promise.reject = t, window.Promise.race = x, window.Promise.all = w, window.Promise.prototype.then = n.prototype.c, window.Promise.prototype["catch"] = n.prototype.g);
+      }());
+
+      (function () {
+        function l(a, b) { document.addEventListener ? a.addEventListener("scroll", b, !1) : a.attachEvent("scroll", b) } function m(a) { document.body ? a() : document.addEventListener ? document.addEventListener("DOMContentLoaded", function c() { document.removeEventListener("DOMContentLoaded", c); a() }) : document.attachEvent("onreadystatechange", function k() { if ("interactive" == document.readyState || "complete" == document.readyState) document.detachEvent("onreadystatechange", k), a() }) }; function r(a) {
+          this.a = document.createElement("div"); this.a.setAttribute("aria-hidden", "true"); this.a.appendChild(document.createTextNode(a)); this.b = document.createElement("span"); this.c = document.createElement("span"); this.h = document.createElement("span"); this.f = document.createElement("span"); this.g = -1; this.b.style.cssText = "max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;"; this.c.style.cssText = "max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+          this.f.style.cssText = "max-width:none;display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;"; this.h.style.cssText = "display:inline-block;width:200%;height:200%;font-size:16px;max-width:none;"; this.b.appendChild(this.h); this.c.appendChild(this.f); this.a.appendChild(this.b); this.a.appendChild(this.c)
+        }
+        function t(a, b) { a.a.style.cssText = "max-width:none;min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;white-space:nowrap;font-synthesis:none;font:" + b + ";" } function y(a) { var b = a.a.offsetWidth, c = b + 100; a.f.style.width = c + "px"; a.c.scrollLeft = c; a.b.scrollLeft = a.b.scrollWidth + 100; return a.g !== b ? (a.g = b, !0) : !1 } function z(a, b) { function c() { var a = k; y(a) && a.a.parentNode && b(a.g) } var k = a; l(a.b, c); l(a.c, c); y(a) }; function A(a, b) { var c = b || {}; this.family = a; this.style = c.style || "normal"; this.weight = c.weight || "normal"; this.stretch = c.stretch || "normal" } var B = null, C = null, E = null, F = null; function G() { if (null === C) if (J() && /Apple/.test(window.navigator.vendor)) { var a = /AppleWebKit\/([0-9]+)(?:\.([0-9]+))(?:\.([0-9]+))/.exec(window.navigator.userAgent); C = !!a && 603 > parseInt(a[1], 10) } else C = !1; return C } function J() { null === F && (F = !!document.fonts); return F }
+        function K() { if (null === E) { var a = document.createElement("div"); try { a.style.font = "condensed 100px sans-serif" } catch (b) { } E = "" !== a.style.font } return E } function L(a, b) { return [a.style, a.weight, K() ? a.stretch : "", "100px", b].join(" ") }
+        A.prototype.load = function (a, b) {
+          var c = this, k = a || "BESbswy", q = 0, D = b || 3E3, H = (new Date).getTime(); return new Promise(function (a, b) {
+            if (J() && !G()) { var M = new Promise(function (a, b) { function e() { (new Date).getTime() - H >= D ? b() : document.fonts.load(L(c, '"' + c.family + '"'), k).then(function (c) { 1 <= c.length ? a() : setTimeout(e, 25) }, function () { b() }) } e() }), N = new Promise(function (a, c) { q = setTimeout(c, D) }); Promise.race([N, M]).then(function () { clearTimeout(q); a(c) }, function () { b(c) }) } else m(function () {
+              function u() {
+                var b; if (b = -1 !=
+                  f && -1 != g || -1 != f && -1 != h || -1 != g && -1 != h) (b = f != g && f != h && g != h) || (null === B && (b = /AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent), B = !!b && (536 > parseInt(b[1], 10) || 536 === parseInt(b[1], 10) && 11 >= parseInt(b[2], 10))), b = B && (f == v && g == v && h == v || f == w && g == w && h == w || f == x && g == x && h == x)), b = !b; b && (d.parentNode && d.parentNode.removeChild(d), clearTimeout(q), a(c))
+              } function I() {
+                if ((new Date).getTime() - H >= D) d.parentNode && d.parentNode.removeChild(d), b(c); else {
+                  var a = document.hidden; if (!0 === a || void 0 === a) f = e.a.offsetWidth,
+                    g = n.a.offsetWidth, h = p.a.offsetWidth, u(); q = setTimeout(I, 50)
+                }
+              } var e = new r(k), n = new r(k), p = new r(k), f = -1, g = -1, h = -1, v = -1, w = -1, x = -1, d = document.createElement("div"); d.dir = "ltr"; t(e, L(c, "sans-serif")); t(n, L(c, "serif")); t(p, L(c, "monospace")); d.appendChild(e.a); d.appendChild(n.a); d.appendChild(p.a); document.body.appendChild(d); v = e.a.offsetWidth; w = n.a.offsetWidth; x = p.a.offsetWidth; I(); z(e, function (a) { f = a; u() }); t(e, L(c, '"' + c.family + '",sans-serif')); z(n, function (a) { g = a; u() }); t(n, L(c, '"' + c.family + '",serif'));
+              z(p, function (a) { h = a; u() }); t(p, L(c, '"' + c.family + '",monospace'))
+            })
+          })
+        }; "object" === typeof module ? module.exports = A : (window.FontFaceObserver = A, window.FontFaceObserver.prototype.load = A.prototype.load);
+      }());
+
+      /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+      (function (s) { "use strict"; var e = function (e, n, t) { var o, i = s.document, r = i.createElement("link"); if (n) o = n; else { var d = (i.body || i.getElementsByTagName("head")[0]).childNodes; o = d[d.length - 1] } var a = i.styleSheets; r.rel = "stylesheet", r.href = e, r.media = "only x", function e(n) { if (i.body) return n(); setTimeout(function () { e(n) }) }(function () { o.parentNode.insertBefore(r, n ? o : o.nextSibling) }); var l = function (e) { for (var n = r.href, t = a.length; t--;)if (a[t].href === n) return e(); setTimeout(function () { l(e) }) }; function f() { r.addEventListener && r.removeEventListener("load", f), r.media = t || "all" } return r.addEventListener && r.addEventListener("load", f), (r.onloadcssdefined = l)(f), r }; "undefined" != typeof exports ? exports.loadCSS = e : s.loadCSS = e })("undefined" != typeof global ? global : this);
+
+      var fontA = new FontFaceObserver('Open Sans');
+      var fontB = new FontFaceObserver('Montserrat', {
+        weight: 800
+      });
+
+      Promise.all([
+        fontA.load(null, 10000),
+        fontB.load(null, 10000)
+      ]).then(function () {
+        document.documentElement.classList.remove('fonts__initial');
+        // Optimization for Repeat Views
+        sessionStorage.fontsLoadedCriticalFoftPreloadPolyfill = true;
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <noscript>
+    <div class="no-js__notify">
+      <p>
+        For full functionality of this page it is necessary to enable JavaScript.<br>
+        <a href="http://www.enable-javascript.com" target="_blank">HERE</a> are the instructions how to enable
+        JavaScript in your web browser.
+      </p>
+    </div>
+  </noscript>
+
+  <div class="container typo-grid">
+    <div id="top" class="page row" role="document">
+      <header role="banner" class="typo">
+        <h1>HTML5 Test Page</h1>
+        <p>This is a test page filled with common HTML elements to be used to provide visual feedback whilst building
+          CSS systems and frameworks.</p>
+      </header>
+      <nav role="navigation" class="typo">
+        <ul>
+          <li>
+            <a href="#text">Text</a>
+            <ul>
+              <li><a href="#text__headings">Headings</a></li>
+              <li><a href="#text__paragraphs">Paragraphs</a></li>
+              <li><a href="#text__headingsParagraphs">Headings and Paragraphs</a></li>
+              <li><a href="#text__blockquotes">Blockquotes</a></li>
+              <li><a href="#text__lists">Lists</a></li>
+              <li><a href="#text__hr">Horizontal rules</a></li>
+              <li><a href="#text__tables">Tabular data</a></li>
+              <li><a href="#text__code">Code</a></li>
+              <li><a href="#text__inline">Inline elements</a></li>
+              <li><a href="#text__comments">HTML Comments</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#embedded">Embedded content</a>
+            <ul>
+              <li><a href="#embedded__images">Images</a></li>
+              <li><a href="#embedded__svg">Inline SVG</a></li>
+              <li><a href="#embedded__iframe">IFrames</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#forms">Form elements</a>
+            <ul>
+              <li><a href="#forms__input">Input fields</a></li>
+              <li><a href="#forms__select">Select menus</a></li>
+              <li><a href="#forms__checkbox">Checkboxes</a></li>
+              <li><a href="#forms__radio">Radio buttons</a></li>
+              <li><a href="#forms__textareas">Textareas</a></li>
+              <li><a href="#forms__html5">HTML5 inputs</a></li>
+              <li><a href="#forms__action">Action buttons</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#grid">Grid</a>
+            <ul>
+              <li><a href="#grid__columns">Columns</a></li>
+              <li><a href="#grid__offsets">Offsets</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <main role="main">
+        <div class="row">
+          <section id="text" class="typo">
+            <header>
+              <h1>Text</h1>
+            </header>
+            <article id="text__headings">
+              <header>
+                <h2>Headings</h2>
+              </header>
+              <div>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <h5>Heading 5</h5>
+                <h6>Heading 6</h6>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__paragraphs">
+              <header>
+                <h1>Paragraphs</h1>
+              </header>
+              <div>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.</p>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__headingsParagraphs">
+              <header>
+                <h1>Headings and Paragraphs</h1>
+              </header>
+              <div>
+                <h1>Heading 1</h1>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+                <h2>Heading 2</h2>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+                <h3>Heading 3</h3>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+                <h4>Heading 4</h4>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+                <h5>Heading 5</h5>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+                <h6>Heading 6</h6>
+                <p>
+                  A paragraph (from the Greek paragraphos, “to write beside” or
+                  “written beside”) is a
+                  self-contained
+                  unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one
+                  or more sentences. Though not required by the syntax of any language, paragraphs are usually an
+                  expected part of formal writing, used to organize longer prose.
+                </p>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__blockquotes">
+              <header>
+                <h1>Blockquotes</h1>
+              </header>
+              <div>
+                <blockquote>
+                  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written
+                    document, that is set off from the main text as a paragraph, or block of text.</p>
+                  <p>It is typically distinguished visually using indentation and a different typeface or smaller
+                    size
+                    quotation. It may or may not include a citation, usually placed at the bottom.</p>
+                  <cite><a href="#!">Said no one, ever.</a></cite>
+                </blockquote>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__lists">
+              <header>
+                <h1>Lists</h1>
+              </header>
+              <div>
+                <h3>Definition list</h3>
+                <dl>
+                  <dt>Definition List Title</dt>
+                  <dd>This is a definition list division.</dd>
+                </dl>
+                <h3>Ordered List</h3>
+                <ol>
+                  <li>List Item 1</li>
+                  <li>List Item 2</li>
+                  <li>List Item 3</li>
+                </ol>
+                <h3>Unordered List</h3>
+                <ul>
+                  <li>List Item 1</li>
+                  <li>List Item 2</li>
+                  <li>List Item 3</li>
+                </ul>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__hr">
+              <header>
+                <h1>Horizontal rules</h1>
+              </header>
+              <hr class="hr">
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__tables">
+              <header>
+                <h1>Tabular data</h1>
+              </header>
+              <table>
+                <caption>Table Caption</caption>
+                <thead>
+                  <tr>
+                    <th>Table Heading 1</th>
+                    <th>Table Heading 2</th>
+                    <th>Table Heading 3</th>
+                    <th>Table Heading 4</th>
+                    <th>Table Heading 5</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Table Footer 1</th>
+                    <th>Table Footer 2</th>
+                    <th>Table Footer 3</th>
+                    <th>Table Footer 4</th>
+                    <th>Table Footer 5</th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                </tbody>
+              </table>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__code">
+              <header>
+                <h1>Code</h1>
+              </header>
+              <div>
+                <p><strong>Keyboard input:</strong> <kbd>Cmd</kbd></p>
+                <p><strong>Inline code:</strong> <code>&lt;div&gt;code&lt;/div&gt;</code></p>
+                <p><strong>Sample output:</strong> <samp>This is sample output from a computer program.</samp></p>
+                <h2>Pre-formatted text</h2>
+                <pre>
+            P R E F O R M A T T E D T E X T
+            ! " # $ % &amp; ' ( ) * + , - . /
+            0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+            @ A B C D E F G H I J K L M N O
+            P Q R S T U V W X Y Z [ \ ] ^ _
+            ` a b c d e f g h i j k l m n o
+            p q r s t u v w x y z { | } ~ 
+                  </pre>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__inline">
+              <header>
+                <h1>Inline elements</h1>
+              </header>
+              <div>
+                <p><a href="#!">This is a text link</a>.</p>
+                <p><strong>Strong is used to indicate strong importance.</strong></p>
+                <p><em>This text has added emphasis.</em></p>
+                <p>The <b>b element</b> is stylistically different text from normal text, without any special
+                  importance.</p>
+                <p>The <i>i element</i> is text that is offset from the normal text.</p>
+                <p>The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual
+                  annotation.</p>
+                <p><del>This text is deleted</del> and <ins>This text is inserted</ins>.</p>
+                <p><s>This text has a strikethrough</s>.</p>
+                <p>Superscript<sup>®</sup>.</p>
+                <p>Subscript for things like H<sub>2</sub>O.</p>
+                <p>This small text is <small>small for for fine print, etc.</small></p>
+                <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+                <p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline
+                    quotation.</q></p>
+                <p><cite>This is a citation.</cite></p>
+                <p>The <dfn>dfn element</dfn> indicates a definition.</p>
+                <p>The <mark>mark element</mark> indicates a highlight.</p>
+                <p>The <var>variable element</var>, such as <var>x</var> = <var>y</var>.</p>
+                <p>The time element: <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time></p>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+            <article id="text__comments">
+              <header>
+                <h1>HTML Comments</h1>
+              </header>
+              <div>
+                <p>There is comment here:
+                  <!--This comment should not be displayed-->
+                </p>
+                <p>There is a comment spanning multiple tags and lines below here.</p>
+                <!--<p><a href="#!">This is a text link. But it should not be displayed in a comment</a>.</p>
+                    <p><strong>Strong is used to indicate strong importance. But, it should not be displayed in a comment</strong></p>
+                    <p><em>This text has added emphasis. But, it should not be displayed in a comment</em></p>-->
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+          </section>
+          <section id="embedded">
+            <header>
+              <h1>Embedded content</h1>
+            </header>
+            <article id="embedded__images">
+              <header>
+                <h2>Images</h2>
+              </header>
+              <div>
+                <h3>No <code>&lt;figure&gt;</code> element</h3>
+                <p><img src="http://placekitten.com/320/320" alt="Image alt text"></p>
+                <h3>Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code></h3>
+                <figure><img src="http://placekitten.com/320/320" alt="Image alt text"></figure>
+                <h3>Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code></h3>
+                <figure>
+                  <img src="http://placekitten.com/320/320" alt="Image alt text">
+                  <figcaption>Here is a caption for this image.</figcaption>
+                </figure>
+              </div>
+              <footer>
+                <p><a href="#top">[Top]</a></p>
+              </footer>
+            </article>
+          </section>
+          <section id="forms" class="typo">
+            <header>
+              <h1>Form elements</h1>
+            </header>
+            <form>
+              <fieldset id="forms__input">
+                <legend>Input fields</legend>
+                <p>
+                  <label for="input__text">Text Input</label>
+                  <input id="input__text" type="text" placeholder="Text Input">
+                </p>
+                <p>
+                  <label for="input__password">Password</label>
+                  <input id="input__password" type="password" placeholder="Type your Password">
+                </p>
+                <p>
+                  <label for="input__webaddress">Web Address</label>
+                  <input id="input__webaddress" type="url" placeholder="http://yoursite.com">
+                </p>
+                <p>
+                  <label for="input__emailaddress">Email Address</label>
+                  <input id="input__emailaddress" type="email" placeholder="name@email.com">
+                </p>
+                <p>
+                  <label for="input__phone">Phone Number</label>
+                  <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+                </p>
+                <p>
+                  <label for="input__search">Search</label>
+                  <input id="input__search" type="search" placeholder="Enter Search Term">
+                </p>
+                <p>
+                  <label for="input__text2">Number Input</label>
+                  <input id="input__text2" type="number" placeholder="Enter a Number">
+                </p>
+                <p>
+                  <label for="input__text3" class="error">Error</label>
+                  <input id="input__text3" class="is-error" type="text" placeholder="Text Input">
+                </p>
+                <p>
+                  <label for="input__text4" class="valid">Valid</label>
+                  <input id="input__text4" class="is-valid" type="text" placeholder="Text Input">
+                </p>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__select">
+                <legend>Select menus</legend>
+                <p>
+                  <label for="select">Select</label>
+                  <select id="select">
+                    <optgroup label="Option Group">
+                      <option>Option One</option>
+                      <option>Option Two</option>
+                      <option>Option Three</option>
+                    </optgroup>
+                  </select>
+                </p>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__checkbox">
+                <legend>Checkboxes</legend>
+                <ul class="list list--bare">
+                  <li>
+                    <label for="checkbox1">
+                      <input id="checkbox1" name="checkbox" type="checkbox" checked="checked">
+                      <span>Choice A</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="checkbox2">
+                      <input id="checkbox2" name="checkbox" type="checkbox">
+                      <span>Choice B</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="checkbox3">
+                      <input id="checkbox3" name="checkbox" type="checkbox">
+                      <span>Choice C</span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__radio">
+                <legend>Radio buttons</legend>
+                <ul class="list list--bare">
+                  <li>
+                    <label for="radio1">
+                      <input id="radio1" name="radio" type="radio" class="radio" checked="checked">
+                      <span>Option 1</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="radio2"><input id="radio2" name="radio" type="radio" class="radio">
+                      <span>Option 2</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label for="radio3">
+                      <input id="radio3" name="radio" type="radio" class="radio">
+                      <span>Option 3</span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__textareas">
+                <legend>Textareas</legend>
+                <p>
+                  <label for="textarea">Textarea</label>
+                  <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here"></textarea>
+                </p>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__html5">
+                <legend>HTML5 inputs</legend>
+                <p>
+                  <label for="ic">Color input</label>
+                  <input type="color" id="ic" value="#000000">
+                </p>
+                <p>
+                  <label for="in">Number input</label>
+                  <input type="number" id="in" min="0" max="10" value="5">
+                </p>
+                <p>
+                  <label for="idd">Date input</label>
+                  <input type="date" id="idd" value="1970-01-01">
+                </p>
+                <p>
+                  <label for="idm">Month input</label>
+                  <input type="month" id="idm" value="1970-01">
+                </p>
+                <p>
+                  <label for="idw">Week input</label>
+                  <input type="week" id="idw" value="1970-W01">
+                </p>
+                <p>
+                  <label for="idt">Datetime input</label>
+                  <input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
+                </p>
+                <p>
+                  <label for="idtl">Datetime-local input</label>
+                  <input type="datetime-local" id="idtl" value="1970-01-01T00:00">
+                </p>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+              <fieldset id="forms__action">
+                <legend>Action buttons</legend>
+                <p>
+                  <input type="submit" value="<input type=submit>">
+                  <input type="button" value="<input type=button>">
+                  <input type="reset" value="<input type=reset>">
+                  <input type="submit" value="<input disabled>" disabled>
+                </p>
+                <p>
+                  <button type="submit">&lt;button type=submit&gt;</button>
+                  <button type="button">&lt;button type=button&gt;</button>
+                  <button type="reset">&lt;button type=reset&gt;</button>
+                  <button type="button" disabled>&lt;button disabled&gt;</button>
+                </p>
+              </fieldset>
+              <p><a href="#top">[Top]</a></p>
+            </form>
+          </section>
+          <section id="grid" class="typo">
+            <header>
+              <h2>Grid</h2>
+            </header>
+            <article id="grid__columns">
+              <header>
+                <h3>Columns</h3>
+              </header>
+              <div class="row">
+                <div class="col-1">col-1</div>
+                <div class="col-11">col-11</div>
+              </div>
+              <div class="row">
+                <div class="col-2">col-2</div>
+                <div class="col-10">col-10</div>
+              </div>
+              <div class="row">
+                <div class="col-3">col-3</div>
+                <div class="col-9">col-9</div>
+              </div>
+              <div class="row">
+                <div class="col-4">col-4</div>
+                <div class="col-8">col-8</div>
+              </div>
+              <div class="row">
+                <div class="col-5">col-5</div>
+                <div class="col-7">col-7</div>
+              </div>
+              <div class="row">
+                <div class="col-6">col-6</div>
+                <div class="col-6">col-6</div>
+              </div>
+              <div class="row">
+                <div class="col-7">col-7</div>
+                <div class="col-5">col-5</div>
+              </div>
+              <div class="row">
+                <div class="col-12">col-12</div>
+              </div>
+            </article>
+            <article id="grid__offsets">
+              <header>
+                <h3>Offsets</h3>
+              </header>
+              <div class="row">
+                <div class="col-11 offset-1">offset-1</div>
+              </div>
+              <div class="row">
+                <div class="col-1">col-1</div>
+                <div class="col-9 offset-2">offset-2</div>
+              </div>
+              <div class="row">
+                <div class="col-2">col-2</div>
+                <div class="col-7 offset-3">offset-3</div>
+              </div>
+              <div class="row">
+                <div class="col-3">col-3</div>
+                <div class="col-5 offset-4">offset-4</div>
+              </div>
+              <div class="row">
+                <div class="col-4">col-4</div>
+                <div class="col-3 offset-5">offset-5</div>
+              </div>
+              <div class="row">
+                <div class="col-5">col-5</div>
+                <div class="col-1 offset-6">offset-6</div>
+              </div>
+            </article>
+            <article id="grid__shapes">
+              <header>
+                <h3>Shapes</h3>
+              </header>
+              <div class="row">
+                <div class="col-4">
+                  <div class="square">
+                    <div>offset-4</div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="square">
+                    <div>offset-4</div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="square">
+                    <div>offset-2</div>
+                  </div>
+                  <div class="square">
+                    <div>offset-2</div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="square">
+                    <div>offset-2</div>
+                  </div>
+                  <div class="square">
+                    <div>offset-2</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="square">
+                    <div>
+                      Square
+                    </div>
+                  </div>
+                  <div class="rect">
+                    <div>
+                      Rect
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="rect">
+                    <div>
+                      Rect
+                    </div>
+                  </div>
+                  <div class="square">
+                    <div>
+                      Square
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+      </main>
+      <footer role="contentinfo">
+        <p>Made by <a href="http://twitter.com/cbracco">@cbracco</a>. Code on <a href="http://github.com/cbracco/html5-test-page">GitHub</a>.</p>
+      </footer>
+    </div>
+  </div>
+
+</body>
+
+</html>
