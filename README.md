@@ -1,6 +1,6 @@
 # 📦 React Typescript Starter
 
-Modern React & Typescript boilderplate for rapid project contruction
+Modern React & Typescript boilerplate for rapid project construction
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
