@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const paths = require('./paths');
 
 const webpack = require('webpack');
@@ -50,6 +49,7 @@ module.exports = merge(common, {
                   'postcss-custom-media',
                   'postcss-media-minmax',
                   'postcss-image-set-function',
+                  'autoprefixer'
                 ],
               },
             },
