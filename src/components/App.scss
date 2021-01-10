@@ -16,7 +16,7 @@
   display: flex;
   border: 0.4rem solid var(--primaryColor);
   background-color: var(--secondaryBackground);
-  box-shadow: 20px 20px 42px #03050a, -20px -20px 42px #0d132a;
+  box-shadow: 2rem 2rem 4.2rem var(--primaryShadow), -2rem -2rem 4.2rem var(--secondaryShadow);
 
   @media (--viewport-medium) {
     flex-direction: column;
