@@ -5,10 +5,7 @@
     "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es6", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -18,5 +15,7 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "target": "esnext"
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "config/*"]
 }
