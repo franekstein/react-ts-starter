@@ -84,5 +84,5 @@
     "server": "cross-env yarn build && node server/fastify.js",
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js"
   },
-  "version": "1.0.0"
+  "version": "1.0.1"
 }
