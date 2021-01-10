@@ -1,9 +1,6 @@
 declare namespace IndexScssNamespace {
   export interface IIndexScss {
-    'first-letter': string;
-    hr: string;
-    indented: string;
-    lead: string;
+    app: string;
   }
 }
 

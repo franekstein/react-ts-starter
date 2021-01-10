@@ -1,40 +1,43 @@
-@import './_root/global';
-@import './00_mixins/_m-debug';
-@import './00_mixins/_m-grid';
-@import './00_mixins/_m-position';
-@import './00_mixins/_m-flex';
-@import './00_mixins/_m-layout';
-@import './00_mixins/_m-global';
-@import './00_mixins/_m-image';
-@import './00_mixins/_m-list';
-@import './00_mixins/_m-typography';
-@import './01_base/_b-reset.css';
-@import './01_base/_b-typography';
-
-@custom-media --viewport-medium (width <= 50rem);
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
 :root {
-  --mainColor: #12345678;
+  --colorBlack: #000000;
+  --mainBackground: #080c1aee;
+  --secondaryBackground: #EEF2F5ff;
+  --primaryColor: #080c1aff;
+  --secondaryColor: #3800FFBD;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 body {
-  color: var(--mainColor);
-  font-family: system-ui;
-  overflow-wrap: break-word;
+  font-family: 'Montserrat';
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+
+  & > div {
+    height: 100%;
+    background-color: var(--mainBackground);
+  }
 }
 
 :--heading {
-  background-image: image-set(url(../media/logo.png) 1x, url(../media/back.jpg) 2x);
-
-  @media (--viewport-medium) {
-    margin-block: 0;
-  }
+  font-weight: bold;
 }
 
 a {
+  color: var(--primaryColor);
 
   &:hover {
-    color: rebeccapurple;
+    color: var(--colorBlack);
   }
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
