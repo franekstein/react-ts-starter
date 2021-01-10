@@ -1,4 +1,4 @@
 dist/
 node_modules/
-server/certificate/*.crt
-server/certificate/*.key
+server/certificates/*.crt
+server/certificates/*.key
