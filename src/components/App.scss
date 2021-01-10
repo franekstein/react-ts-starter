@@ -1,4 +1,70 @@
-.element {
+@custom-media --viewport-medium (width <= 50rem);
+
+.main {
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
+  height: 100%;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.article {
+  width: calc(100% - 5rem);
+  display: flex;
+  border: 0.4rem solid var(--primaryColor);
+  background-color: var(--secondaryBackground);
+  box-shadow: 20px 20px 42px #03050a, -20px -20px 42px #0d132a;
+
+  @media (--viewport-medium) {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 0.4rem solid var(--primaryColor);
+  background-size: contain;
+  background-repeat: repeat;
+  background-image: image-set(
+    url(../media/background-1x.png) 1x,
+    url(../media/background-2x.png) 2x
+  );
+  background-color: var(--secondaryColor);
+
+  @media (--viewport-medium) {
+    border-right: none;
+  }
+
+  & img {
+    width: 80%;
+    padding: 10% 0;
+  }
+}
+
+.description {
+  flex: 0 0 60%;
+  display: block;
+}
+
+.header {
+  margin: 0;
+  padding: 0 1rem;
+  line-height: 1.6;
+  font-size: 3rem;
+  border-bottom: 0.4rem solid var(--primaryColor);
+
+  @media (--viewport-medium) {
+    border-top: 0.4rem solid var(--primaryColor);
+  }
+}
+
+.list {
+  font-size: 2rem;
+  line-height: 1.6;
 }
