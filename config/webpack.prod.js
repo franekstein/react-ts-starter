@@ -5,6 +5,7 @@ const common = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const postcssPresetEnv = require('postcss-preset-env');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -42,14 +43,7 @@ module.exports = merge(common, {
             options: {
               postcssOptions: {
                 plugins: [
-                  'postcss-import',
-                  'postcss-url',
-                  'postcss-custom-properties',
-                  'postcss-custom-selectors',
-                  'postcss-custom-media',
-                  'postcss-media-minmax',
-                  'postcss-image-set-function',
-                  'autoprefixer'
+                  postcssPresetEnv({stage: 0}),
                 ],
               },
             },

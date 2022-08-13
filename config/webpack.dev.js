@@ -1,21 +1,21 @@
 const paths = require('./paths');
 
-const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
+const postcssPresetEnv = require('postcss-preset-env');
 
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
-    contentBase: paths.build,
+    static: {
+      directory: paths.build,
+    },
     open: true,
     compress: true,
-    hot: true,
     port: 8080,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
   module: {
     rules: [
       {
@@ -42,14 +42,7 @@ module.exports = merge(common, {
               sourceMap: true,
               postcssOptions: {
                 plugins: [
-                  'postcss-import',
-                  'postcss-url',
-                  'postcss-custom-properties',
-                  'postcss-custom-selectors',
-                  'postcss-custom-media',
-                  'postcss-media-minmax',
-                  'postcss-image-set-function',
-                  'autoprefixer'
+                  postcssPresetEnv(),
                 ],
               },
             },
