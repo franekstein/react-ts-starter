@@ -42,9 +42,7 @@ module.exports = merge(common, {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  postcssPresetEnv({stage: 0}),
-                ],
+                plugins: [postcssPresetEnv({ stage: 0 })],
               },
             },
           },

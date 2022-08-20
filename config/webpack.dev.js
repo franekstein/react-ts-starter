@@ -41,9 +41,7 @@ module.exports = merge(common, {
             options: {
               sourceMap: true,
               postcssOptions: {
-                plugins: [
-                  postcssPresetEnv(),
-                ],
+                plugins: [postcssPresetEnv()],
               },
             },
           },

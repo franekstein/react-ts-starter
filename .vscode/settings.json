@@ -4,10 +4,10 @@
     "javascriptreact",
     "Babel Javascript",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "eslint.alwaysShowStatus": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  },
+  }
 }
