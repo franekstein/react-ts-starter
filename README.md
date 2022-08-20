@@ -51,6 +51,8 @@ npx serve dist
 - [Sass](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/) - with CSS Modules, custom properties, custom selectors, custom media and image set
 
+## Problems
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

@@ -29,11 +29,12 @@ const App: FunctionComponent = () => {
           <h2 className={styles.header}>React Typescript Starter</h2>
           <StyledList>
             <li>Webpack 5.*</li>
-            <li>React 17.*</li>
+            <li>React 18.*</li>
             <li>Typescript 4.*</li>
-            <li>Sass (with dart-sass)</li>
+            <li>Sass 1.* (with dart-sass)</li>
             <li>PostCSS 8.* (with CSS Modules)</li>
             <li>ESLint and Prettier</li>
+            <li>Jest 28.*, React Testing Library 13.* and Playwright 1.*</li>
           </StyledList>
         </StyledSection>
       </article>
