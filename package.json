@@ -115,5 +115,5 @@
     "test:report": "npx playwright show-report",
     "test:unit": "cross-env jest --coverage"
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
