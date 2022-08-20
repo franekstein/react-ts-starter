@@ -6,7 +6,7 @@ const path = require('path');
 const pem = require('pem');
 
 const portNumber = 3000;
-const sourceDir = '../dist';
+const sourceDir = '../build';
 
 pem.createCertificate({ days: 1, selfSigned: true }, (err, keys) => {
   if (err) {

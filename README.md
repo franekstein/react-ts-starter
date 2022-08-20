@@ -39,7 +39,7 @@ or you can serve it with `serve` package
 
 ```bash
 yarn build
-npx serve dist
+npx serve build
 ```
 
 ## Features
