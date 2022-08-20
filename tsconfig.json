@@ -5,17 +5,19 @@
     "baseUrl": "./src",
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": ["es6", "dom"],
-    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "module": "es2020",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext"
+    "target": "es2020",
+    "types": ["node", "jest"]
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "config/*"]
+  "exclude": ["node_modules", "config/*"],
+  "include": ["src/**/*"]
 }

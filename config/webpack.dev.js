@@ -24,7 +24,7 @@ module.exports = merge(common, {
         use: [
           'style-loader',
           {
-            loader: '@teamsupercell/typings-for-css-modules-loader',
+            loader: 'webpack-typings-for-css',
           },
           {
             loader: 'css-loader',

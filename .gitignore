@@ -1,4 +1,8 @@
 dist/
 node_modules/
+coverage/
 server/certificates/*.crt
 server/certificates/*.key
+/test-results/
+/playwright-report/
+/playwright/.cache/
