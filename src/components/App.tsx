@@ -1,8 +1,22 @@
+// TODO: fix config issues
+/// <reference types="@emotion/react/types/css-prop" />
 import React from 'react';
 import { FunctionComponent } from 'react';
+import styled from '@emotion/styled';
 import styles from './App.scss';
 
 import logo from '../media/logo.svg';
+
+const StyledSection = styled.section`
+  flex: 0 0 60%;
+  display: block;
+`;
+
+const StyledList = styled.section`
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 1.6;
+`;
 
 const App: FunctionComponent = () => {
   return (
@@ -11,17 +25,17 @@ const App: FunctionComponent = () => {
         <div className={styles.logo}>
           <img src={logo} />
         </div>
-        <section className={styles.description}>
+        <StyledSection>
           <h2 className={styles.header}>React Typescript Starter</h2>
-          <ol className={styles.list}>
+          <StyledList>
             <li>Webpack 5.*</li>
             <li>React 17.*</li>
             <li>Typescript 4.*</li>
             <li>Sass (with dart-sass)</li>
             <li>PostCSS 8.* (with CSS Modules)</li>
             <li>ESLint and Prettier</li>
-          </ol>
-        </section>
+          </StyledList>
+        </StyledSection>
       </article>
     </main>
   );

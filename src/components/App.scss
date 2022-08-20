@@ -48,11 +48,6 @@
   }
 }
 
-.description {
-  flex: 0 0 60%;
-  display: block;
-}
-
 .header {
   margin: 0;
   padding: 1rem;
@@ -63,9 +58,4 @@
   @media (--viewport-medium) {
     border-top: 0.4rem solid var(--primaryColor);
   }
-}
-
-.list {
-  font-size: 2rem;
-  line-height: 1.6;
 }

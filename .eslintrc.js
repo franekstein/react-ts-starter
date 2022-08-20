@@ -9,8 +9,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['prettier'],
+  plugins: ['prettier', '@emotion'],
   rules: {
+    '@emotion/pkg-renaming': 'error',
     'prettier/prettier': [
       'error',
       {

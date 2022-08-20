@@ -3,12 +3,10 @@
 /* eslint-disable */
 
 declare const styles = {
-  main: 'App__main--OYDfP',
-  article: 'App__article--xSqYE',
-  logo: 'App__logo--gAm0e',
-  description: 'App__description--lEWQu',
-  header: 'App__header--trrtU',
-  list: 'App__list--TH3nr',
+    'main': 'App__main--OYDfP',
+    'article': 'App__article--xSqYE',
+    'logo': 'App__logo--gAm0e',
+    'header': 'App__header--trrtU',
 } as const;
 
 export type ClassName = string;

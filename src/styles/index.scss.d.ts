@@ -2,7 +2,8 @@
 /* tslint:disable */
 /* eslint-disable */
 
-declare const styles = {} as const;
+declare const styles = {
+} as const;
 
 export type ClassName = string;
 
