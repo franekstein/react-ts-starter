@@ -6,8 +6,8 @@ on:
     branches: [main, master]
   workflow_dispatch:
 jobs:
-  build: 
-    name: Build
+  test: 
+    name: Test
     timeout-minutes: 60
     runs-on: ubuntu-latest    
     steps:
@@ -31,6 +31,11 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+  build: 
+    name: Build
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
       - name: Build
         run: yarn run build
   deploy:
