@@ -78,6 +78,7 @@
   "engines": {
     "node": "^14.20.*"
   },
+  "homepage": "https://franekstein.github.io/react-ts-starter/",
   "keywords": [
     "webpack",
     "webpack 5",
