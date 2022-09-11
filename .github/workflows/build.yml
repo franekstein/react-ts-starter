@@ -4,6 +4,11 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 jobs:
   main: 
     name: Build
@@ -35,4 +40,4 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build~
+          folder: build
