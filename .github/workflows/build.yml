@@ -32,6 +32,7 @@ jobs:
           path: playwright-report/
           retention-days: 30
   deploy:
+    needs: build
     name: Deploy    
     runs-on: ubuntu-latest    
     permissions:
