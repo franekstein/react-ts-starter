@@ -5,15 +5,15 @@ on:
   pull_request:
     branches: [main, master]
   workflow_dispatch:
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 jobs:
   main: 
     name: Build
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest    
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -39,6 +39,7 @@ jobs:
         run: yarn run build
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
