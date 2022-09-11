@@ -18,6 +18,8 @@ jobs:
         run: yarn
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Run Lint tests
+        run: yarn run lint:check
       - name: Run Jest tests
         run: yarn run test:unit
       - name: Run Playwright tests
