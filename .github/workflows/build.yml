@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: '14.20.x'
       - name: Install dependencies
@@ -30,6 +30,8 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Build
+        run: yarn run build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
