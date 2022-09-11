@@ -31,6 +31,8 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Build
+        run: yarn run build
   deploy:
     needs: build
     name: Deploy    
@@ -44,8 +46,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14.20.x'
-      - name: Build
-        run: yarn run build
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
