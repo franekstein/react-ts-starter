@@ -1,0 +1,84 @@
+name: React TS Starter workflow
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+jobs:
+  general: 
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Install packages
+        run: yarn
+  lint: 
+    needs: general
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Run Lint tests
+        run: yarn run lint:check
+  unit: 
+    needs: general
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Run Jest tests
+        run: yarn run test:unit
+  e2e: 
+    needs: general
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Run Playwright tests
+        run: yarn playwright test
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30 
+  build: 
+    needs: [lint, unit, e2e]
+    timeout-minutes: 60
+    runs-on: ubuntu-latest    
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Build
+        run: yarn run build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest    
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14.20.x'
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+      
