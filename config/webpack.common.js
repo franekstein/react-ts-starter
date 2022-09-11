@@ -40,24 +40,6 @@ module.exports = {
       title: 'webpack Boilerplate',
       template: paths.src + '/static/template.html',
       filename: 'index.html',
-      cspPlugin: {
-        enabled: true,
-        policy: {
-          'base-uri': "'self'",
-          'object-src': "'none'",
-          'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
-          'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"],
-        },
-        hashingMethod: 'sha256',
-        hashEnabled: {
-          'script-src': true,
-          'style-src': true,
-        },
-        nonceEnabled: {
-          'script-src': true,
-          'style-src': true,
-        },
-      },
     }),
     new CspHtmlWebpackPlugin(),
   ],
